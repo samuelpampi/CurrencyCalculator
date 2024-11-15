@@ -1,78 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="./css/style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
-    <script src="https://kit.fontawesome.com/8edc7916a1.js" crossorigin="anonymous"></script>
-    <script src=""></script>
+        <script src="https://kit.fontawesome.com/8edc7916a1.js" crossorigin="anonymous"></script>
+        <script src=""></script>
 
-    <title>Currency Calculator</title>
-</head>
-<body>
-    <!-- Contenedor principal de la calculadora -->
-    <div class="calculadora">
-        <!-- Titulo -->
-        <header>Calculadora Divisas</header>
+        <title>Currency Calculator</title>
+    </head>
+    <body>
+        <!-- Contenedor principal de la calculadora -->
+        <div class="calculadora">
+            <!-- Titulo -->
+            <header><h2>Calculadora Divisas</h2></header>
 
-        <!-- Formulario para introducir divisas -->
-        <form action="#">
-            <!-- Campo de cantidad -->
-            <div class="form-item" id="valor">
-                <label for="cantidad">Valor de entrada</label>
-                <input type="text" name="cantidad" id="cantidad" value="1">
-            </div>
+            <!-- Formulario para introducir divisas -->
+            <form action="#">
+                <!-- Campo de cantidad -->
+                <div class="form-item" id="valor">
+                    <label for="cantidad">Valor de entrada</label>
+                    <input type="text" name="cantidad" id="cantidad" value="1">
+                </div>
 
-            <!-- Seccion donde se seleccionan las divisas -->
-            <div class="form-item" id="selector-divisas">
-                <!-- Caja seleccion divisa principal -->
-                <div id="selector-divisa-principal">
-                    <label for="divisa-principal">De</label>
-                    <div class="selector">
-                        <img src="./img/eeuu.png" alt="eeuu">
-                        <select name="divisa-principal" id="divisa-principal">
-                            <option value="EUR">EUR</option>
-                            <option value="USD">USD</option>
-                            <option value="GBP">GBP</option>
-                            <option value="JPY">JPY</option>
-                            <option value="CHF">CHF</option>
-                            <option value="CNY">CNY</option>
-                            <option value="RUB">RUB</option>
-                        </select>
+                <!-- Seccion donde se seleccionan las divisas -->
+                <div class="form-item" id="selector-divisas">
+                    <!-- Caja seleccion divisa principal -->
+                    <div id="selector-divisa-principal">
+                        <label for="divisa-principal">De</label>
+                        <div class="selector">
+                            <img src="./img/eeuu.png" alt="eeuu" id="img-divisa-origen">
+                            <select name="divisa-principal" id="divisa-principal" value="USD">
+                                <option value="EUR">EUR</option>
+                                <option value="USD">USD</option>
+                                <option value="GBP">GBP</option>
+                                <option value="JPY">JPY</option>
+                                <option value="CHF">CHF</option>
+                                <option value="CNY">CNY</option>
+                                <option value="RUB">RUB</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Boton para intercambiar las divisas -->
+                    <button type="button" id="intercambio" aria-label="Intercambiar divisas">
+                        <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                    </button>
+
+                    <!-- Caja seleccion divisa final -->
+                    <div id="selector-divisa-final">
+                        <label for="divisa-final">A</label>
+                        <div class="selector">
+                            <img src="./img/eur.png" alt="euro" id="img-divisa-final">
+                            <select name="divisa-final" id="divisa-final" value="EUR">
+                                <option value="EUR">EUR</option>
+                                <option value="USD">USD</option>
+                                <option value="GBP">GBP</option>
+                                <option value="JPY">JPY</option>
+                                <option value="CHF">CHF</option>
+                                <option value="CNY">CNY</option>
+                                <option value="RUB">RUB</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Boton para intercambiar las divisas -->
-                <button type="button" id="intercambio" aria-label="Intercambiar divisas">
-                    <i class="fa-solid fa-arrow-right-arrow-left"></i>
-                </button>
-
-                <!-- Caja seleccion divisa final -->
-                <div id="selector-divisa-final">
-                    <label for="divisa-final">A</label>
-                    <div class="selector">
-                        <img src="./img/eeuu.png" alt="eeuu">
-                        <select name="divisa-final" id="divisa-final">
-                            <option value="EUR">EUR</option>
-                            <option value="USD">USD</option>
-                            <option value="GBP">GBP</option>
-                            <option value="JPY">JPY</option>
-                            <option value="CHF">CHF</option>
-                            <option value="CNY">CNY</option>
-                            <option value="RUB">RUB</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Resultado de la operacion -->
-            <div id="resultado" aria-live="polite">1 EUR = 1.95 USD</div>
-            
-            <!-- Boton para realizar el calculo -->
-            <button type="submit">Convertir Divisa</button>
-        </form>
-    </div>
-</body>
+                <!-- Resultado de la operacion -->
+                <div id="resultado" aria-live="polite">1 EUR = 1.95 USD</div>
+                
+                <!-- Boton para realizar el calculo -->
+                <button type="submit" id="btn_calcular">Convertir Divisa</button>
+            </form>
+        </div>
+    </body>
+    <script src="./js/calculadora.js"></script>
 </html>
