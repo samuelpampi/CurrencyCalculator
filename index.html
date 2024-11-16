@@ -8,6 +8,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
         <script src="https://kit.fontawesome.com/8edc7916a1.js" crossorigin="anonymous"></script>
         <script src=""></script>
@@ -34,15 +35,8 @@
                     <div id="selector-divisa-principal">
                         <label for="divisa-principal">De</label>
                         <div class="selector">
-                            <img src="./img/eeuu.png" alt="eeuu" id="img-divisa-origen">
-                            <select name="divisa-principal" id="divisa-principal" value="USD">
-                                <option value="EUR">EUR</option>
-                                <option value="USD">USD</option>
-                                <option value="GBP">GBP</option>
-                                <option value="JPY">JPY</option>
-                                <option value="CHF">CHF</option>
-                                <option value="CNY">CNY</option>
-                                <option value="RUB">RUB</option>
+                            <img src="https://flagsapi.com/US/flat/64.png" alt="flag" id="img-divisa-origen">
+                            <select name="divisa-principal" id="divisa-principal">
                             </select>
                         </div>
                     </div>
@@ -56,15 +50,8 @@
                     <div id="selector-divisa-final">
                         <label for="divisa-final">A</label>
                         <div class="selector">
-                            <img src="./img/eur.png" alt="euro" id="img-divisa-final">
-                            <select name="divisa-final" id="divisa-final" value="EUR">
-                                <option value="EUR">EUR</option>
-                                <option value="USD">USD</option>
-                                <option value="GBP">GBP</option>
-                                <option value="JPY">JPY</option>
-                                <option value="CHF">CHF</option>
-                                <option value="CNY">CNY</option>
-                                <option value="RUB">RUB</option>
+                            <img src="https://flagsapi.com/US/flat/64.png" alt="flag" id="img-divisa-final">
+                            <select name="divisa-final" id="divisa-final">
                             </select>
                         </div>
                     </div>
@@ -78,5 +65,6 @@
             </form>
         </div>
     </body>
+    <script src="./js/countries.js"></script>
     <script src="./js/calculadora.js"></script>
 </html>
