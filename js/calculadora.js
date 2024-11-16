@@ -26,7 +26,7 @@ function updadteFlag(selectElement, flagElement){
 function calcularResultado(){
     let cant = cantidad.value;
     if(cant == "" || cant == "0"){
-        cant.value = 1;
+        cantidad.value = 1;
         cant = 1;
     }
 
