@@ -25,7 +25,7 @@ function updadteFlag(selectElement, flagElement){
 
 function calcularResultado(){
     let cant = cantidad.value;
-    if(cant == "" || cant == "0"){
+    if(cant == "0"){
         cantidad.value = 1;
         cant = 1;
     }
@@ -39,11 +39,28 @@ function calcularResultado(){
     });
 }
 
+function mostrarError(){
+    console.log(cantidad.value);
+    let error = document.getElementById("error");
+    if(cantidad.value == ""){
+        error.innerText = "Introduzca una cantidad";
+    } else{
+        error.innerText = "Formato no valido";
+    }
+}
+
 divisa_origen.addEventListener("change", () => updadteFlag(divisa_origen, img_divisa_origen));
 divisa_final.addEventListener("change", () => updadteFlag(divisa_final, img_divisa_final));
 boton_calcular.addEventListener('click', e => {
+    let regex = /^\d+(\.\d+)?$/;
+    error.innerText = "";
     e.preventDefault();
-    calcularResultado();
+    if(regex.test(cantidad.value)){
+        calcularResultado();
+    } else{
+        mostrarError();
+    }
+    
 });
 
 //Actualizamos banderas al cargar pagina
